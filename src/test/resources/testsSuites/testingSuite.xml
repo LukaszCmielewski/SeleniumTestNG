@@ -4,7 +4,7 @@
         <classes>
             <class name="edu.test.HelloTest"/>
             <!--            <class name="dev.restfulApi.ObjectTest"></class>-->
-<!--            <class name="in.reqres.UserTest"></class>-->
+            <class name="com.saucedemo.test.SwagLabsTest"></class>
         </classes>
     </test>
 </suite>
