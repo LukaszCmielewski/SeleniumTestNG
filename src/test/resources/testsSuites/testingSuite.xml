@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="HelloTestNgSuite">
+    <test name="HelloWorldTest" preserve-order="true" thread-count="10" parallel="methods">
+        <classes>
+            <class name="edu.test.HelloTest"/>
+            <!--            <class name="dev.restfulApi.ObjectTest"></class>-->
+<!--            <class name="in.reqres.UserTest"></class>-->
+        </classes>
+    </test>
+</suite>
