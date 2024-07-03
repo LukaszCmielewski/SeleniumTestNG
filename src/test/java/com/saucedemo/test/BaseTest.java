@@ -29,14 +29,14 @@ public class BaseTest {
 
     @BeforeClass
     public void beforeClass() throws IOException {
-        logger.info("Running before class");
+        logger.trace("Running before class");
         //driver = DriverFactory.getDriver();
 
     }
 
     @BeforeMethod
     public void setup() {
-        logger.info("Running before method");
+        logger.trace("Running before method");
 
 
         try {
@@ -54,12 +54,13 @@ public class BaseTest {
 
     @AfterMethod
     public void tearDown() {
+        waiter(500);
         DriverFactory.quitDriver();
-        logger.info("Running after method");
+        logger.trace("Running after method");
     }
 
     @AfterClass
     public void afterClass() {
-        logger.info("Running after class");
+        logger.trace("Running after class");
     }
 }

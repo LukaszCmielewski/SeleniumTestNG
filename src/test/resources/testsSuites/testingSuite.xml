@@ -2,7 +2,7 @@
 <suite name="HelloTestNgSuite">
     <test name="HelloWorldTest" preserve-order="true" thread-count="1" parallel="methods">
         <classes>
-            <class name="edu.test.HelloTest"/>
+<!--            <class name="edu.test.HelloTest"/>-->
             <!--            <class name="dev.restfulApi.ObjectTest"></class>-->
             <class name="com.saucedemo.test.SwagLabsTest"></class>
         </classes>

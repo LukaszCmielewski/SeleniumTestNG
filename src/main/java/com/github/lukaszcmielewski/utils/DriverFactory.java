@@ -15,7 +15,7 @@ public class DriverFactory {private static final Logger logger = LogManager.getL
     public static WebDriver getDriver() throws IOException {
         if (driver == null) {
             String name = PropertiesLoader.loadProperty("broswer.name");
-            logger.info("Setting WebDriver as : " + name);
+            logger.trace("Setting WebDriver as : " + name);
             if (name.equals("firefox")) {
                 driver = new FirefoxDriver();
                 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
