@@ -38,14 +38,15 @@ public class BaseTest {
     public void setup() {
         logger.info("Running before method");
 
-        wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(15))//ile bedzie czekał
-                                                .pollingEvery(Duration.ofMillis(100))//co ile
-                                                .ignoring(NoSuchElementException.class);
+
         try {
             driver = DriverFactory.getDriver();
 
             driver.get("https://www.saucedemo.com/");
             driver.manage().window().maximize();
+            wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(15))//ile bedzie czekał
+                                                    .pollingEvery(Duration.ofMillis(100))//co ile
+                                                    .ignoring(NoSuchElementException.class);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -53,7 +54,7 @@ public class BaseTest {
 
     @AfterMethod
     public void tearDown() {
-        driver.quit();
+        DriverFactory.quitDriver();
         logger.info("Running after method");
     }
 

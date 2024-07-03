@@ -7,12 +7,18 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class SwagLabsTest extends BaseTest{
+public class SwagLabsTest extends BaseTest {
     @Test
     public void loginTest() throws IOException {
-        HomePage homePage = new HomePage();
-        String title = homePage.loginUser("standard_user", "secret_sauce").returnTitle();
+        InventoryPage inventoryPage = new HomePage().loginUser("standard_user", "secret_sauce");
+        String title = inventoryPage.returnTitle();
         Assert.assertEquals(title, "Products");
     }
 
+    @Test
+    public void goToAboutPageTest() throws IOException {
+        InventoryPage inventoryPage = new HomePage().loginUser("standard_user", "secret_sauce");
+        String careersTestLink = inventoryPage.clickAboutMenu().getCareersTestLink();
+        Assert.assertEquals(careersTestLink, "Careers");
+    }
 }
