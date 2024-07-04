@@ -21,4 +21,11 @@ public class CheckoutPage extends MenuPage{
     @FindBy(id = "postal-code")
     WebElement postalCodeInput;
 
+    public CheckoutStepTwoPage continueClick(String fname, String lname, String postalcode) throws IOException {
+        firstNameInput.sendKeys(fname);
+        lastNameInput.sendKeys(lname);
+        postalCodeInput.sendKeys(postalcode);
+        continueButton.click();
+        return new CheckoutStepTwoPage();
+    }
 }
