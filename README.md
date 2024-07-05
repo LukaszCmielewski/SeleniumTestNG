@@ -1,1 +1,1 @@
-Sample GUI tests
+# Sample GUI tests
