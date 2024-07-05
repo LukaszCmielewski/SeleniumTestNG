@@ -1,6 +1,5 @@
 package com.saucedemo.pages;
 
-
 import com.github.lukaszcmielewski.utils.DriverFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,5 +16,4 @@ public class BasePage {
         this.driver = DriverFactory.getDriver();
         PageFactory.initElements(driver, this);
     }
-
 }

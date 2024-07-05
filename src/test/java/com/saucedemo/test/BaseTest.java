@@ -35,13 +35,10 @@ public class BaseTest {
     }
 
     @BeforeMethod
-    public void setup() {
+    public void setup() throws IOException {
         logger.trace("Running before method");
-
-
         try {
             driver = DriverFactory.getDriver();
-
             driver.get("https://www.saucedemo.com/");
             driver.manage().window().maximize();
             wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(15))//ile bedzie czekał
@@ -54,7 +51,6 @@ public class BaseTest {
 
     @AfterMethod
     public void tearDown() {
-        waiter(500);
         DriverFactory.quitDriver();
         logger.trace("Running after method");
     }

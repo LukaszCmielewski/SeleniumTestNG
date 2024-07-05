@@ -54,4 +54,8 @@ public class MenuPage extends BasePage {
         cartLink.click();
         return new CartPage();
     }
+
+    public String returnPageTitle() {
+        return titleText.getText();
+    }
 }

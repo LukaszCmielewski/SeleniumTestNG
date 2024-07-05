@@ -9,7 +9,6 @@ import java.util.Random;
 
 public class InventoryPage extends MenuPage {
 
-
     @FindBy(id = "add-to-cart-sauce-labs-fleece-jacket")
     WebElement add2CartFleeceJacketButton;
     @FindBy(id = "add-to-cart-sauce-labs-backpack")
@@ -22,7 +21,6 @@ public class InventoryPage extends MenuPage {
     WebElement add2CartBikeLightButton;
     @FindBy(id = "add-to-cart-sauce-labs-onesie")
     WebElement add2CartOnesieButton;
-
     @FindBy(id = "remove-sauce-labs-fleece-jacket")
     WebElement removeFleeceJacketButton;
     @FindBy(id = "remove-sauce-labs-backpack")
@@ -35,19 +33,52 @@ public class InventoryPage extends MenuPage {
     WebElement removeBikeLightButton;
     @FindBy(id = "remove-sauce-labs-onesie")
     WebElement removeOnesieButton;
-
     @FindBy(css = ".inventory_item button.btn_secondary")
     List<WebElement> listRemoveButtons;
     @FindBy(css = ".inventory_item button.btn_primary")
     List<WebElement> listAddtoCartButtons;
-
-
-
     @FindBy(css = "span.shopping_cart_badge")
     List<WebElement> cartSize;
+    @FindBy(css = "a.shopping_cart_link")
+    WebElement shoppingCartLink;
 
     public InventoryPage() throws IOException {
         super();
+    }
+
+    public InventoryPage addFleeceJacketToCart() {
+        add2CartBackpackButton.click();
+        return this;
+    }
+
+    public InventoryPage addBackpackToCart() {
+        add2CartBackpackButton.click();
+        return this;
+    }
+
+    public InventoryPage addBoltTShirtToCart() {
+        add2CartBoltTShirtButton.click();
+        return this;
+    }
+
+    public InventoryPage addRedTShirtToCart() {
+        add2CartTShirtRedButton.click();
+        return this;
+    }
+
+    public InventoryPage addBikeLightToCart() {
+        add2CartBikeLightButton.click();
+        return this;
+    }
+
+    public InventoryPage addOnesieToCart() {
+        add2CartOnesieButton.click();
+        return this;
+    }
+
+    public CartPage goToCart() throws IOException {
+        shoppingCartLink.click();
+        return new CartPage();
     }
 
     public InventoryPage goToInventoryPage() {
@@ -72,8 +103,11 @@ public class InventoryPage extends MenuPage {
         listAddtoCartButtons.get(rand.nextInt(listAddtoCartButtons.size())).click();
         return this;
     }
-    public InventoryPage clickRemoveButtons(){
-        listRemoveButtons.forEach((btn)->{btn.click();});
+
+    public InventoryPage clickRemoveButtons() {
+        listRemoveButtons.forEach((btn) -> {
+            btn.click();
+        });
         return this;
     }
 }

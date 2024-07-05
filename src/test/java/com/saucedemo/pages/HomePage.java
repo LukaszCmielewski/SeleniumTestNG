@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.io.IOException;
 
-public class HomePage extends BasePage{
+public class HomePage extends BasePage {
     @FindBy(id = "user-name")
     WebElement userNameInput;
     @FindBy(id = "password")
@@ -20,12 +20,13 @@ public class HomePage extends BasePage{
     WebElement errorButton;
 
     public HomePage() throws IOException {
-            super();
+        super();
+    }
+
+    public void openHomePage() {
 
     }
-    public void openHomePage(){
 
-    }
     public InventoryPage loginUser(String userName, String passwd) throws IOException {
         userNameInput.sendKeys(userName);
         passwordInput.sendKeys(passwd);
