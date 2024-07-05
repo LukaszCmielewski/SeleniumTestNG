@@ -10,7 +10,6 @@ import java.io.IOException;
 public class LoginIT extends BaseTest {
     @Test
     public void loginTest() throws IOException {
-        logger.info("loginTest");
         InventoryPage inventoryPage = new HomePage().loginUser("standard_user", "secret_sauce");
         String title = inventoryPage.returnTitle();
         Assert.assertEquals(title, "Products");
@@ -18,7 +17,6 @@ public class LoginIT extends BaseTest {
 
     @Test
     public void loginLogoutTest() throws IOException {
-        logger.info("loginLogoutTest");
         InventoryPage inventoryPage = new HomePage().loginUser("standard_user", "secret_sauce");
         String title = inventoryPage.returnTitle();
         Assert.assertEquals(title, "Products");

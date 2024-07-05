@@ -28,8 +28,8 @@ public class CheckoutStepTwoPage extends MenuPage {
         return listProductLabels.size();
     }
 
-    public CheckoutComplete finishClick() throws IOException {
+    public CheckoutCompletePage finishClick() throws IOException {
         finishButton.click();
-        return new CheckoutComplete();
+        return new CheckoutCompletePage();
     }
 }

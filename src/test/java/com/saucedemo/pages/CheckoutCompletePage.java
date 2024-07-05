@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.io.IOException;
 
-public class CheckoutComplete extends MenuPage {
+public class CheckoutCompletePage extends MenuPage {
     @FindBy(id = "back-to-products")
     WebElement backInventory;
     @FindBy(id = "back-to-products")
@@ -17,7 +17,7 @@ public class CheckoutComplete extends MenuPage {
     @FindBy(css = "img.pony_express")
     WebElement OkImg;
 
-    public CheckoutComplete() throws IOException {
+    public CheckoutCompletePage() throws IOException {
         super();
     }
 
